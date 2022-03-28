@@ -15,4 +15,4 @@ options:
   message: "Hello world..."
 schema:
   message: "str?"
-# image: "ghcr.io/siku2/{arch}-hass-addon-cul2mqtt"
+image: "ghcr.io/siku2/hass-addon-cul2mqtt-{arch}"
