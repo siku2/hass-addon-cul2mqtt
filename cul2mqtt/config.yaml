@@ -1,18 +1,24 @@
 # https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
 name: cul2mqtt
-version: "1.0.0"
+version: "0.1.12"
 slug: cul2mqtt
 description: CUL to MQTT
-url: "https://github.com/siku2/hass-addon-cul2mqtt/tree/main/cul2mqtt"
 arch:
   - armhf
   - armv7
   - aarch64
   - amd64
   - i386
-init: false
+url: "https://github.com/siku2/hass-addon-cul2mqtt/tree/main/cul2mqtt"
+usb: true
+uart: true
 options:
-  message: "Hello world..."
+  device: null
+  topic: cul
 schema:
-  message: "str?"
+  device: device(subsystem=tty)
+  topic: str
 image: "ghcr.io/siku2/hass-addon-cul2mqtt-{arch}"
+services:
+  - mqtt:need
+init: false

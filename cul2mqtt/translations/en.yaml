@@ -1,4 +1,7 @@
 configuration:
-  message:
-    name: Message
-    description: The message that will be printed to the log when starting this example add-on.
+  device:
+    name: Device
+    description: The CUL device to communicate with.
+  topic:
+    name: Topic
+    description: MQTT topic to communicate over.
