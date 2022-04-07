@@ -4,7 +4,10 @@
 # s6-overlay docs: https://github.com/just-containers/s6-overlay
 # ==============================================================================
 
+stty -F "$(bashio::config 'device')" raw -echo -echoe -echok
+
 exec cul-mqtt \
+    -vv \
     --device "$(bashio::config 'device')" \
     --broker "$(bashio::services mqtt 'host')" \
     --topic "$(bashio::config 'topic')" \
